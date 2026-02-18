@@ -10,8 +10,8 @@
 
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg,#0f172a,#020617);
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f172a,#020617);
 color:#e2e8f0;
 }
 
@@ -23,9 +23,15 @@ padding:40px 20px;
 
 header{
 display:flex;
+justify-content:space-between;
 align-items:center;
-gap:30px;
 margin-bottom:40px;
+}
+
+.left{
+display:flex;
+gap:25px;
+align-items:center;
 }
 
 .photo{
@@ -36,9 +42,17 @@ background:#1e293b;
 border:3px solid #38bdf8;
 }
 
+.lang-btn{
+background:#38bdf8;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
 h1{
 margin:0;
-font-size:32px;
 }
 
 h3{
@@ -46,19 +60,8 @@ color:#38bdf8;
 margin-top:5px;
 }
 
-.contact{
-margin-top:10px;
-font-size:14px;
-color:#94a3b8;
-}
-
 .section{
 margin-top:40px;
-}
-
-.section-title{
-font-size:24px;
-margin-bottom:20px;
 }
 
 .card{
@@ -75,16 +78,11 @@ background:#1e293b;
 padding:6px 12px;
 border-radius:6px;
 margin:4px;
-font-size:13px;
 }
 
-.screenshots{
-margin-top:15px;
-border:2px dashed #334155;
-padding:20px;
-border-radius:8px;
-color:#64748b;
-text-align:center;
+.bold{
+font-weight:bold;
+color:#38bdf8;
 }
 
 </style>
@@ -97,15 +95,17 @@ text-align:center;
 
 <header>
 
+<div class="left">
+
 <div class="photo"></div>
 
 <div>
 
 <h1>Paula Corredor</h1>
 
-<h3>QA Automation Engineer</h3>
+<h3 id="title">QA Automation Engineer</h3>
 
-<div class="contact">
+<div>
 
 📧 pau.corredor95@gmail.com<br>
 🔗 linkedin.com/in/paula-corredor-q
@@ -114,20 +114,26 @@ text-align:center;
 
 </div>
 
+</div>
+
+<button class="lang-btn" onclick="toggleLang()">ENG</button>
+
 </header>
 
 
 <div class="section">
 
-<div class="section-title">✨ Sobre mí</div>
+<h2 id="about-title">✨ Sobre mí</h2>
 
 <div class="card">
 
+<p id="about-text">
+
 Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales.
-
 Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.
-
 Disfruto investigar cómo interactúan frontend y backend, validar datos y asegurar sistemas confiables.
+
+</p>
 
 </div>
 
@@ -136,58 +142,50 @@ Disfruto investigar cómo interactúan frontend y backend, validar datos y asegu
 
 <div class="section">
 
-<div class="section-title">🚀 Proyectos</div>
-
+<h2 id="projects-title">🚀 Proyectos</h2>
 
 <div class="card">
 
 <h3>🚕 Urban Routes — QA Manual Tester</h3>
 
-<b>Descripción:</b><br>
+<p><span class="bold">Descripción:</span><br>
 Aplicación web de planificación de rutas que calcula duración y precio de viajes.
+Permite a los usuarios seleccionar puntos de origen y destino y obtener información sobre el viaje.</p>
 
-<br><br>
+<p><span class="bold">Problema:</span><br>
+Era necesario garantizar la calidad antes del lanzamiento para evitar errores críticos que afectaran la experiencia del usuario.</p>
 
-<b>Problema:</b><br>
-Garantizar calidad antes del lanzamiento.
-
-<br><br>
-
-<b>Actividades:</b>
+<p><span class="bold">Lo que hice:</span></p>
 
 <ul>
 
 <li>Análisis de requisitos</li>
-<li>Diseño de 50+ test cases</li>
-<li>Testing cross-browser</li>
-<li>Validación UI con Figma</li>
+<li>Diseño de más de 50 casos de prueba</li>
+<li>Ejecución de pruebas funcionales</li>
+<li>Pruebas en distintos navegadores</li>
+<li>Validación de interfaz usando Figma</li>
+<li>Reporte de bugs en Jira</li>
 
 </ul>
 
-<b>Resultados:</b>
+<p><span class="bold">Resultado:</span></p>
 
 <ul>
 
-<li>15+ bugs reportados</li>
-<li>Cobertura completa</li>
+<li>Más de 15 bugs reportados</li>
+<li>Mejora significativa en la estabilidad del producto</li>
 
 </ul>
 
-<b>Herramientas:</b>
+<p class="bold">Herramientas:</p>
 
 <div class="tools">
 
 <span>Jira</span>
-<span>Google Sheets</span>
 <span>Figma</span>
 <span>DevTools</span>
+<span>Google Sheets</span>
 <span>Draw.io</span>
-
-</div>
-
-<div class="screenshots">
-
-📸 aquí irán screenshots
 
 </div>
 
@@ -198,36 +196,33 @@ Garantizar calidad antes del lanzamiento.
 
 <h3>🛒 Urban Grocers — QA API Tester</h3>
 
-<b>Descripción:</b><br>
-API REST ecommerce.
+<p><span class="bold">Descripción:</span><br>
+API REST de una aplicación de ecommerce utilizada para gestionar productos, usuarios y pedidos.</p>
 
-<br><br>
+<p><span class="bold">Problema:</span><br>
+Era necesario validar que todos los endpoints funcionaran correctamente y manejaran errores adecuadamente.</p>
 
-<b>Problema:</b><br>
-Validar endpoints backend.
-
-<br><br>
-
-<b>Actividades:</b>
+<p><span class="bold">Lo que hice:</span></p>
 
 <ul>
 
-<li>Testing GET, POST, PUT, DELETE</li>
-<li>Validación JSON</li>
-<li>35+ test cases</li>
+<li>Pruebas de endpoints GET, POST, PUT y DELETE</li>
+<li>Validación de respuestas JSON</li>
+<li>Diseño de más de 35 casos de prueba</li>
+<li>Identificación y reporte de bugs</li>
 
 </ul>
 
-<b>Resultados:</b>
+<p><span class="bold">Resultado:</span></p>
 
 <ul>
 
-<li>12+ bugs reportados</li>
-<li>95% cobertura</li>
+<li>Más de 12 bugs reportados</li>
+<li>Alta cobertura de pruebas de la API</li>
 
 </ul>
 
-<b>Herramientas:</b>
+<p class="bold">Herramientas:</p>
 
 <div class="tools">
 
@@ -238,19 +233,44 @@ Validar endpoints backend.
 
 </div>
 
-<div class="screenshots">
-
-📸 aquí irán screenshots
-
 </div>
 
 </div>
 
-
 </div>
 
 
-</div>
+<script>
+
+let lang="es";
+
+function toggleLang(){
+
+if(lang==="es"){
+
+document.getElementById("about-title").innerText="✨ About Me";
+document.getElementById("projects-title").innerText="🚀 Projects";
+document.getElementById("title").innerText="QA Automation Engineer";
+
+document.querySelector(".lang-btn").innerText="ESP";
+
+lang="en";
+
+}else{
+
+document.getElementById("about-title").innerText="✨ Sobre mí";
+document.getElementById("projects-title").innerText="🚀 Proyectos";
+
+document.querySelector(".lang-btn").innerText="ENG";
+
+lang="es";
+
+}
+
+}
+
+</script>
+
 
 </body>
 </html>
