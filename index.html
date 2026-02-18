@@ -23,9 +23,23 @@ margin:auto;
 
 .header{
 display:flex;
-align-items:center;
 justify-content:space-between;
-margin-bottom:30px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.profile img{
+width:130px;
+height:130px;
+border-radius:50%;
+border:3px solid #4fc3f7;
+object-fit:cover;
 }
 
 .name{
@@ -36,18 +50,23 @@ font-weight:bold;
 .role{
 font-size:20px;
 color:#4fc3f7;
-margin-top:5px;
+}
+
+.contact{
+margin-top:10px;
+font-size:14px;
+color:#ccc;
+}
+
+.section{
+margin-top:40px;
 }
 
 .card{
 background: rgba(0,0,0,0.35);
 padding:20px;
 border-radius:12px;
-margin-top:20px;
-}
-
-.section{
-margin-top:30px;
+margin-top:15px;
 }
 
 h2{
@@ -62,20 +81,6 @@ margin-top:15px;
 ul{
 margin-top:10px;
 }
-
-.tools span{
-display:inline-block;
-background:#1e88e5;
-padding:6px 10px;
-margin:4px;
-border-radius:6px;
-font-size:14px;
-}
-
-.tools span:nth-child(2){background:#43a047;}
-.tools span:nth-child(3){background:#fb8c00;}
-.tools span:nth-child(4){background:#8e24aa;}
-.tools span:nth-child(5){background:#e53935;}
 
 .lang-switch{
 display:flex;
@@ -150,12 +155,24 @@ color:#aaa;
 
 <div class="header">
 
+<div class="profile">
+
+<img src="profile.jpg">
+
 <div>
 
 <div class="name">Paula Corredor</div>
 
-<div class="role" id="role">QA Automation Engineer</div>
+<div class="role" id="role">
+QA Automation Engineer
+</div>
 
+<div class="contact">
+📧 pau.corredor95@gmail.com<br>
+🔗 linkedin.com/in/paula-corredor-q
+</div>
+
+</div>
 </div>
 
 <div class="lang-switch">
@@ -178,11 +195,9 @@ color:#aaa;
 
 <h2 id="aboutTitle">✨ Sobre mí</h2>
 
-<div class="card">
+<div class="card" id="aboutText">
 
-<p id="aboutText">
 Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.
-</p>
 
 </div>
 
@@ -193,73 +208,11 @@ Soy QA Automation Junior con formación en pruebas de software y experiencia tra
 
 <h2 id="projectsTitle">🚀 Proyectos</h2>
 
-<div class="card">
 
-<h3 id="p1title">🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
+<div class="card" id="project1"></div>
 
-<p class="bold" id="p1d">Descripción del proyecto:</p>
+<div class="card" id="project2"></div>
 
-<p id="p1dt">
-Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte (automóvil personal, taxi, bicicleta, scooter, a pie, automóvil compartido).
-</p>
-
-<p class="bold" id="p1p">Problema a resolver:</p>
-
-<p id="p1pt">
-Garantizar la calidad y funcionalidad de una aplicación crítica de transporte antes de su lanzamiento, identificando errores que podrían afectar la experiencia del usuario y la reputación de la empresa.
-</p>
-
-<p class="bold" id="p1a">Actividades realizadas:</p>
-
-<ul id="p1alist">
-
-<li>Análisis de requisitos mediante mapas mentales y diagramas de flujo</li>
-<li>Diseño de casos de prueba utilizando técnicas de clases de equivalencia y valores límite</li>
-<li>Pruebas de regresión ejecutando 50+ casos de prueba predefinidos</li>
-<li>Testing cross-browser en Chrome y Firefox con diferentes resoluciones</li>
-<li>Validación de interfaz comparando diseños de Figma</li>
-<li>Pruebas de funcionalidad para rutas y reservas</li>
-
-</ul>
-
-<p class="bold">Herramientas utilizadas:</p>
-
-<div class="tools">
-
-<span>Jira</span>
-<span>Google Sheets</span>
-<span>Figma</span>
-<span>DevTools</span>
-<span>Draw.io</span>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3 id="p2title">🛒 QA API Tester - Urban Grocers</h3>
-
-<p class="bold">Descripción del proyecto:</p>
-
-<p id="p2dt">
-API REST para plataforma de comercio electrónico que gestiona productos, kits, servicios de entrega y disponibilidad de almacenes.
-</p>
-
-<p class="bold">Herramientas utilizadas:</p>
-
-<div class="tools">
-
-<span>Postman</span>
-<span>Google Sheets</span>
-<span>Jira</span>
-<span>JSON Validator</span>
-<span>Swagger</span>
-
-</div>
-
-</div>
 
 </div>
 
@@ -268,49 +221,170 @@ API REST para plataforma de comercio electrónico que gestiona productos, kits, 
 
 <script>
 
+const spanish = {
+
+role:"QA Automation Engineer",
+
+aboutTitle:"✨ Sobre mí",
+
+aboutText:"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.",
+
+projectsTitle:"🚀 Proyectos",
+
+project1:`
+
+<h3>🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
+
+<div class="bold">Descripción del proyecto:</div>
+
+Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte.
+
+<div class="bold">Problema a resolver:</div>
+
+Garantizar la calidad antes del lanzamiento identificando errores críticos.
+
+<div class="bold">Actividades realizadas:</div>
+
+<ul>
+<li>Análisis de requisitos</li>
+<li>Diseño de casos de prueba</li>
+<li>Pruebas de regresión</li>
+<li>Testing cross-browser</li>
+<li>Validación con Figma</li>
+</ul>
+
+<div class="bold">Herramientas utilizadas:</div>
+
+Jira, Google Sheets, Figma, DevTools, Draw.io
+
+`,
+
+project2:`
+
+<h3>🛒 QA API Tester - Urban Grocers (Plataforma de Retail)</h3>
+
+<div class="bold">Descripción del proyecto:</div>
+
+API REST para plataforma ecommerce.
+
+<div class="bold">Problema a resolver:</div>
+
+Validar endpoints backend y calidad de datos.
+
+<div class="bold">Actividades realizadas:</div>
+
+<ul>
+<li>Testing de endpoints</li>
+<li>Validación JSON</li>
+<li>Testing GET POST PUT DELETE</li>
+</ul>
+
+<div class="bold">Herramientas utilizadas:</div>
+
+Postman, Jira, Swagger, Google Sheets
+
+`
+
+};
+
+
+const english = {
+
+role:"QA Automation Engineer",
+
+aboutTitle:"✨ About me",
+
+aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience.",
+
+projectsTitle:"🚀 Projects",
+
+project1:`
+
+<h3>🚕 QA Manual Tester - Urban Routes (Transport Application)</h3>
+
+<div class="bold">Project description:</div>
+
+Web application for route planning and fare calculation.
+
+<div class="bold">Problem:</div>
+
+Ensure quality before launch by identifying critical issues.
+
+<div class="bold">Activities:</div>
+
+<ul>
+<li>Requirements analysis</li>
+<li>Test case design</li>
+<li>Regression testing</li>
+<li>Cross-browser testing</li>
+<li>UI validation</li>
+</ul>
+
+<div class="bold">Tools used:</div>
+
+Jira, Google Sheets, Figma, DevTools, Draw.io
+
+`,
+
+project2:`
+
+<h3>🛒 QA API Tester - Urban Grocers (Retail Platform)</h3>
+
+<div class="bold">Project description:</div>
+
+REST API for ecommerce platform.
+
+<div class="bold">Problem:</div>
+
+Validate backend endpoints and data integrity.
+
+<div class="bold">Activities:</div>
+
+<ul>
+<li>Endpoint testing</li>
+<li>JSON validation</li>
+<li>HTTP methods testing</li>
+</ul>
+
+<div class="bold">Tools used:</div>
+
+Postman, Jira, Swagger, Google Sheets
+
+`
+
+};
+
+
 function toggleLanguage(){
 
-const isEnglish = document.getElementById("langToggle").checked;
+const toggle=document.getElementById("langToggle");
 
-const esp = document.getElementById("espLabel");
-const eng = document.getElementById("engLabel");
+const lang = toggle.checked ? english : spanish;
 
-if(isEnglish){
+document.getElementById("role").innerHTML=lang.role;
 
-esp.classList.remove("active");
-esp.classList.add("inactive");
+document.getElementById("aboutTitle").innerHTML=lang.aboutTitle;
 
-eng.classList.remove("inactive");
-eng.classList.add("active");
+document.getElementById("aboutText").innerHTML=lang.aboutText;
 
-document.getElementById("aboutTitle").innerText="✨ About Me";
+document.getElementById("projectsTitle").innerHTML=lang.projectsTitle;
 
-document.getElementById("aboutText").innerText=
-"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring apps, finding bugs, analyzing root causes, and improving software quality.";
+document.getElementById("project1").innerHTML=lang.project1;
 
-document.getElementById("projectsTitle").innerText="🚀 Projects";
+document.getElementById("project2").innerHTML=lang.project2;
 
-}
-else{
 
-esp.classList.add("active");
-esp.classList.remove("inactive");
+document.getElementById("espLabel").classList.toggle("active");
 
-eng.classList.add("inactive");
-eng.classList.remove("active");
-
-document.getElementById("aboutTitle").innerText="✨ Sobre mí";
-
-document.getElementById("aboutText").innerText=
-"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software.";
-
-document.getElementById("projectsTitle").innerText="🚀 Proyectos";
+document.getElementById("engLabel").classList.toggle("active");
 
 }
 
-}
+toggleLanguage();
 
 </script>
 
+
 </body>
 </html>
+
