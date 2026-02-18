@@ -1,120 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Paula Corredor | QA Automation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paula Corredor | QA Automation Junior</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f6fb;
-    color: #333;
+body{
+font-family: 'Inter', sans-serif;
+margin:0;
+background: linear-gradient(135deg,#f8f9ff,#eef1ff,#fdf0ff);
+color:#1a1a1a;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:40px 80px;
 }
 
-h1 {
-    color: #2d6cdf;
+.name{
+font-size:32px;
+font-weight:700;
 }
 
-button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    border: none;
-    background-color: #2d6cdf;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+.title{
+color:#6c63ff;
+font-weight:600;
 }
 
-button:hover {
-    background-color: #1f4dbf;
+.lang{
+cursor:pointer;
+font-weight:600;
 }
 
-.section {
-    margin-top: 30px;
+/* MAIN LAYOUT */
+
+.container{
+display:grid;
+grid-template-columns: 300px 1fr;
+gap:60px;
+padding:40px 80px;
+}
+
+/* PROFILE */
+
+.profile{
+text-align:center;
+}
+
+.profile img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+background:#ddd;
+}
+
+.contact{
+margin-top:20px;
+}
+
+.contact p{
+margin:10px 0;
+}
+
+/* ABOUT */
+
+.section{
+margin-bottom:50px;
+}
+
+.section h2{
+margin-bottom:15px;
+}
+
+/* TOOLS */
+
+.tools{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.tool{
+width:100px;
+height:100px;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+font-weight:600;
+}
+
+/* TOOL COLORS */
+
+.jira{background:#2684FF;}
+.postman{background:#FF6C37;}
+.devtools{background:#F4B400;}
+.swagger{background:#7E57C2;}
+.figma{background:#2ECC71;}
+.drawio{background:#E53935;}
+.sheets{background:#34A853;}
+
+/* PROJECTS */
+
+.project{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-bottom:80px;
+align-items:center;
+}
+
+.project img{
+width:100%;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+color:#777;
 }
 
 </style>
 
+</head>
+<body>
+
+<header>
+
+<div>
+<div class="name">Paula Corredor</div>
+<div class="title">QA Automation Junior</div>
+</div>
+
+<div class="lang" onclick="toggleLanguage()">ESP | ENG</div>
+
+</header>
+
+
+<div class="container">
+
+<!-- PROFILE LEFT -->
+
+<div class="profile">
+
+<img src="foto.jpg">
+
+<div class="contact">
+
+<p>📧 pau.corredor95@gmail.com</p>
+
+<p>
+🔗 <a href="https://www.linkedin.com/in/paula-corredor-q/" target="_blank">
+LinkedIn Profile
+</a>
+</p>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT CONTENT -->
+
+<div>
+
+<!-- ABOUT -->
+
+<div class="section">
+
+<h2>✨ Sobre mí</h2>
+
+<p id="about">
+
+Soy QA Automation Junior con pasión por la calidad del software y el análisis profundo de aplicaciones. Me motiva explorar sistemas para entender cómo funcionan internamente, identificar bugs y contribuir a mejorar la experiencia del usuario.
+
+<br><br>
+
+Tengo experiencia en testing manual y de APIs utilizando herramientas como Jira y Postman, creando casos de prueba y documentando defectos de forma clara y accionable.
+
+<br><br>
+
+Mi objetivo es crecer como QA Automation Engineer y contribuir al desarrollo de software confiable, eficiente y de alta calidad.
+
+</p>
+
+</div>
+
+
+<!-- TOOLS -->
+
+<div class="section">
+
+<h2>🛠️ Herramientas</h2>
+
+<div class="tools">
+
+<div class="tool jira">Jira</div>
+
+<div class="tool postman">Postman</div>
+
+<div class="tool devtools">DevTools</div>
+
+<div class="tool swagger">Swagger</div>
+
+<div class="tool figma">Figma</div>
+
+<div class="tool drawio">Draw.io</div>
+
+<div class="tool sheets">Sheets</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECTS -->
+
+<div style="padding:40px 80px;">
+
+<h2>💻 Proyectos</h2>
+
+
+<!-- URBAN ROUTES -->
+
+<div class="project">
+
+<div>
+
+<h3>🚕 Urban Routes — QA Manual Tester</h3>
+
+<p>
+
+Aplicación web de planificación de rutas para diferentes tipos de transporte.
+
+<br><br>
+
+✔ Diseño y ejecución de más de 50 casos de prueba  
+<br>
+✔ Identificación y reporte de 15+ defectos críticos  
+<br>
+✔ Testing cross-browser  
+<br>
+✔ Validación UI con Figma  
+<br>
+✔ Análisis usando DevTools  
+
+<br><br>
+
+Herramientas: Jira, DevTools, Figma, Google Sheets
+
+</p>
+
+</div>
+
+<div>
+
+<img src="urban-routes.png">
+
+</div>
+
+</div>
+
+
+<!-- URBAN GROCERS -->
+
+<div class="project">
+
+<div>
+
+<img src="urban-grocers.png">
+
+</div>
+
+<div>
+
+<h3>🛒 Urban Grocers — QA API Tester</h3>
+
+<p>
+
+API REST para plataforma de comercio electrónico.
+
+<br><br>
+
+✔ Diseño de 35+ casos de prueba  
+<br>
+✔ Testing de endpoints GET, POST, PUT, DELETE  
+<br>
+✔ Identificación de 12+ defectos críticos  
+<br>
+✔ Validación de respuestas JSON  
+
+<br><br>
+
+Herramientas: Postman, Jira, Swagger, Google Sheets
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Paula Corredor — QA Automation Junior
+
+</footer>
+
+
 <script>
 
-function switchLanguage(lang) {
+let currentLang = "es";
 
-    if(lang === "en"){
-        document.getElementById("about-es").style.display = "none";
-        document.getElementById("about-en").style.display = "block";
-    }
+function toggleLanguage(){
 
-    if(lang === "es"){
-        document.getElementById("about-es").style.display = "block";
-        document.getElementById("about-en").style.display = "none";
-    }
+if(currentLang==="es"){
+
+document.getElementById("about").innerHTML = `
+I am a QA Automation Junior passionate about software quality and application analysis. I enjoy exploring systems, identifying bugs, and improving user experience.
+
+<br><br>
+
+I have experience in manual and API testing using tools like Jira and Postman.
+
+<br><br>
+
+My goal is to grow as a QA Automation Engineer and contribute to building reliable, high-quality software.
+`;
+
+currentLang="en";
+
+}
+
+else{
+
+location.reload();
+
+}
 
 }
 
 </script>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>Paula Corredor</h1>
-<h3>QA Automation Junior | QA Tester</h3>
-
-<button onclick="switchLanguage('es')">Español</button>
-<button onclick="switchLanguage('en')">English</button>
-
-
-<div class="section">
-
-<h2>About Me</h2>
-
-<!-- ESPAÑOL -->
-<div id="about-es">
-
-<p>
-Soy QA Automation Junior y QA Tester apasionada por la calidad del software y el análisis profundo de aplicaciones. Me motiva explorar sistemas para entender cómo funcionan internamente, identificar bugs y contribuir a mejorar la experiencia del usuario.
-</p>
-
-<p>
-Disfruto investigar cómo interactúan el frontend y el backend, reproducir errores y documentarlos de forma clara. Tengo experiencia en pruebas manuales, diseño de casos de prueba y testing de APIs usando herramientas como Jira y Postman.
-</p>
-
-<p>
-Actualmente estoy enfocada en crecer como QA Automation Engineer, desarrollando soluciones que ayuden a construir software más confiable, eficiente y de alta calidad.
-</p>
-
-</div>
-
-
-<!-- ENGLISH -->
-<div id="about-en" style="display:none;">
-
-<p>
-I am a Junior QA Automation Engineer and QA Tester passionate about software quality and deep application analysis. I am driven by exploring systems to understand how they work internally, identify bugs, and contribute to improving the user experience.
-</p>
-
-<p>
-I enjoy investigating how frontend and backend interact, reproducing issues, and documenting them clearly. I have experience in manual testing, test case design, and API testing using tools such as Jira and Postman.
-</p>
-
-<p>
-I am currently focused on growing as a QA Automation Engineer, building skills that contribute to creating reliable, efficient, and high-quality software.
-</p>
-
-</div>
-
-</div>
-
-</div>
 
 </body>
 </html>
