@@ -1,101 +1,256 @@
-<section class="projects">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h2>🚀 Proyectos</h2>
+<title>Paula Corredor | QA Portfolio</title>
 
-<!-- Urban Routes -->
-<div class="project-card">
+<style>
+
+body{
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#0f172a,#020617);
+color:#e2e8f0;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+header{
+display:flex;
+align-items:center;
+gap:30px;
+margin-bottom:40px;
+}
+
+.photo{
+width:140px;
+height:140px;
+border-radius:50%;
+background:#1e293b;
+border:3px solid #38bdf8;
+}
+
+h1{
+margin:0;
+font-size:32px;
+}
+
+h3{
+color:#38bdf8;
+margin-top:5px;
+}
+
+.contact{
+margin-top:10px;
+font-size:14px;
+color:#94a3b8;
+}
+
+.section{
+margin-top:40px;
+}
+
+.section-title{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.card{
+background:#020617;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1e293b;
+}
+
+.tools span{
+display:inline-block;
+background:#1e293b;
+padding:6px 12px;
+border-radius:6px;
+margin:4px;
+font-size:13px;
+}
+
+.screenshots{
+margin-top:15px;
+border:2px dashed #334155;
+padding:20px;
+border-radius:8px;
+color:#64748b;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="photo"></div>
+
+<div>
+
+<h1>Paula Corredor</h1>
+
+<h3>QA Automation Engineer</h3>
+
+<div class="contact">
+
+📧 pau.corredor95@gmail.com<br>
+🔗 linkedin.com/in/paula-corredor-q
+
+</div>
+
+</div>
+
+</header>
+
+
+<div class="section">
+
+<div class="section-title">✨ Sobre mí</div>
+
+<div class="card">
+
+Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales.
+
+Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.
+
+Disfruto investigar cómo interactúan frontend y backend, validar datos y asegurar sistemas confiables.
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="section-title">🚀 Proyectos</div>
+
+
+<div class="card">
 
 <h3>🚕 Urban Routes — QA Manual Tester</h3>
 
-<p><b>Descripción del proyecto:</b><br>
-Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte (automóvil personal, taxi, bicicleta, scooter, a pie y automóvil compartido).
-</p>
+<b>Descripción:</b><br>
+Aplicación web de planificación de rutas que calcula duración y precio de viajes.
 
-<p><b>Problema a resolver:</b><br>
-Garantizar la calidad y funcionalidad de una aplicación crítica de transporte antes de su lanzamiento, identificando errores que podrían afectar la experiencia del usuario y la reputación de la empresa.
-</p>
+<br><br>
 
-<p><b>Actividades realizadas:</b></p>
+<b>Problema:</b><br>
+Garantizar calidad antes del lanzamiento.
 
-<ul>
-<li>Análisis de requisitos mediante mapas mentales y diagramas de flujo</li>
-<li>Diseño de casos de prueba utilizando clases de equivalencia y valores límite</li>
-<li>Ejecución de 50+ casos de prueba de regresión</li>
-<li>Testing cross-browser en Chrome y Firefox</li>
-<li>Validación de interfaz usando Figma</li>
-<li>Pruebas funcionales de cálculo de precios, rutas y reservas</li>
-</ul>
+<br><br>
 
-<p><b>Resultados obtenidos:</b></p>
+<b>Actividades:</b>
 
 <ul>
-<li>Reporte de 15+ defectos críticos</li>
-<li>Cobertura completa de funcionalidades clave</li>
-<li>Documentación detallada para futuras regresiones</li>
+
+<li>Análisis de requisitos</li>
+<li>Diseño de 50+ test cases</li>
+<li>Testing cross-browser</li>
+<li>Validación UI con Figma</li>
+
 </ul>
 
-<p><b>Herramientas utilizadas:</b></p>
+<b>Resultados:</b>
+
+<ul>
+
+<li>15+ bugs reportados</li>
+<li>Cobertura completa</li>
+
+</ul>
+
+<b>Herramientas:</b>
 
 <div class="tools">
-<span class="tool jira">Jira</span>
-<span class="tool sheets">Google Sheets</span>
-<span class="tool figma">Figma</span>
-<span class="tool devtools">DevTools</span>
-<span class="tool drawio">Draw.io</span>
+
+<span>Jira</span>
+<span>Google Sheets</span>
+<span>Figma</span>
+<span>DevTools</span>
+<span>Draw.io</span>
+
 </div>
 
 <div class="screenshots">
-📸 Espacio para screenshots
-</div>
+
+📸 aquí irán screenshots
 
 </div>
 
+</div>
 
-<!-- Urban Grocers -->
-<div class="project-card">
+
+<div class="card">
 
 <h3>🛒 Urban Grocers — QA API Tester</h3>
 
-<p><b>Descripción del proyecto:</b><br>
-API REST para plataforma de comercio electrónico que gestiona productos, kits, servicios de entrega y disponibilidad de almacenes.
-</p>
+<b>Descripción:</b><br>
+API REST ecommerce.
 
-<p><b>Problema a resolver:</b><br>
-Validar la correcta implementación de funcionalidades backend y asegurar la calidad de los endpoints.
-</p>
+<br><br>
 
-<p><b>Actividades realizadas:</b></p>
+<b>Problema:</b><br>
+Validar endpoints backend.
 
-<ul>
-<li>Diseño de 35+ casos de prueba</li>
-<li>Testing de métodos GET, POST, PUT, DELETE</li>
-<li>Validación de JSON y códigos de respuesta</li>
-<li>Pruebas positivas, negativas y edge cases</li>
-<li>Testing de lógica de negocio</li>
-</ul>
+<br><br>
 
-<p><b>Resultados obtenidos:</b></p>
+<b>Actividades:</b>
 
 <ul>
-<li>Reporte de 12+ defectos críticos</li>
-<li>Cobertura del 95% de endpoints críticos</li>
-<li>Mejora de calidad antes del despliegue</li>
+
+<li>Testing GET, POST, PUT, DELETE</li>
+<li>Validación JSON</li>
+<li>35+ test cases</li>
+
 </ul>
 
-<p><b>Herramientas utilizadas:</b></p>
+<b>Resultados:</b>
+
+<ul>
+
+<li>12+ bugs reportados</li>
+<li>95% cobertura</li>
+
+</ul>
+
+<b>Herramientas:</b>
 
 <div class="tools">
-<span class="tool postman">Postman</span>
-<span class="tool jira">Jira</span>
-<span class="tool sheets">Google Sheets</span>
-<span class="tool swagger">Swagger</span>
-<span class="tool json">JSON</span>
+
+<span>Postman</span>
+<span>Jira</span>
+<span>Swagger</span>
+<span>JSON</span>
+
 </div>
 
 <div class="screenshots">
-📸 Espacio para screenshots
-</div>
+
+📸 aquí irán screenshots
 
 </div>
 
-</section>
+</div>
+
+
+</div>
+
+
+</div>
+
+</body>
+</html>
