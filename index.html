@@ -180,7 +180,8 @@ QA Automation Engineer
 <span id="espLabel" class="lang-label active">ESP</span>
 
 <label class="switch">
-<input type="checkbox" id="langToggle" onchange="toggleLanguage()">
+<input type="checkbox" id="langToggle">
+
 <span class="slider"></span>
 </label>
 
@@ -394,7 +395,18 @@ document.getElementById("espLabel").classList.add("active");
 
 }
 
+// ESTA LÍNEA VA AQUÍ ↓↓↓
+document.getElementById("langToggle").addEventListener("change", toggleLanguage);
+
+// ESTA TAMBIÉN ↓↓↓
+document.addEventListener("DOMContentLoaded", function(){
+
+document.getElementById("langToggle").checked=false;
+
 toggleLanguage();
+
+});
+
 
 </script>
 
