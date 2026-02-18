@@ -4,85 +4,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paula Corredor | QA Portfolio</title>
+<title>Paula Corredor | QA Automation Engineer</title>
 
 <style>
 
 body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
 margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(135deg,#0f172a,#020617);
-color:#e2e8f0;
+padding:40px;
 }
 
 .container{
-max-width:1100px;
+max-width:900px;
 margin:auto;
-padding:40px 20px;
 }
 
-header{
+.header{
 display:flex;
+align-items:center;
 justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
+margin-bottom:30px;
 }
 
-.left{
-display:flex;
-gap:25px;
-align-items:center;
-}
-
-.photo{
-width:140px;
-height:140px;
-border-radius:50%;
-background:#1e293b;
-border:3px solid #38bdf8;
-}
-
-.lang-btn{
-background:#38bdf8;
-border:none;
-padding:10px 15px;
-border-radius:8px;
-cursor:pointer;
+.name{
+font-size:32px;
 font-weight:bold;
 }
 
-h1{
-margin:0;
-}
-
-h3{
-color:#38bdf8;
+.role{
+font-size:20px;
+color:#4fc3f7;
 margin-top:5px;
 }
 
-.section{
-margin-top:40px;
-}
-
 .card{
-background:#020617;
-padding:25px;
+background: rgba(0,0,0,0.35);
+padding:20px;
 border-radius:12px;
-margin-bottom:25px;
-border:1px solid #1e293b;
+margin-top:20px;
 }
 
-.tools span{
-display:inline-block;
-background:#1e293b;
-padding:6px 12px;
-border-radius:6px;
-margin:4px;
+.section{
+margin-top:30px;
+}
+
+h2{
+color:#81d4fa;
 }
 
 .bold{
 font-weight:bold;
-color:#38bdf8;
+margin-top:15px;
+}
+
+ul{
+margin-top:10px;
+}
+
+.tools span{
+display:inline-block;
+background:#1e88e5;
+padding:6px 10px;
+margin:4px;
+border-radius:6px;
+font-size:14px;
+}
+
+.tools span:nth-child(2){background:#43a047;}
+.tools span:nth-child(3){background:#fb8c00;}
+.tools span:nth-child(4){background:#8e24aa;}
+.tools span:nth-child(5){background:#e53935;}
+
+.lang-switch{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.switch{
+position:relative;
+display:inline-block;
+width:60px;
+height:30px;
+}
+
+.switch input{
+opacity:0;
+width:0;
+height:0;
+}
+
+.slider{
+position:absolute;
+cursor:pointer;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background-color:#2196F3;
+transition:.4s;
+border-radius:34px;
+}
+
+.slider:before{
+position:absolute;
+content:"";
+height:22px;
+width:22px;
+left:4px;
+bottom:4px;
+background:white;
+transition:.4s;
+border-radius:50%;
+}
+
+input:checked + .slider{
+background-color:#4CAF50;
+}
+
+input:checked + .slider:before{
+transform:translateX(30px);
+}
+
+.lang-label{
+font-weight:bold;
+}
+
+.active{
+color:#4CAF50;
+}
+
+.inactive{
+color:#aaa;
 }
 
 </style>
@@ -93,48 +148,40 @@ color:#38bdf8;
 
 <div class="container">
 
-<header>
-
-<div class="left">
-
-<div class="photo"></div>
+<div class="header">
 
 <div>
 
-<h1>Paula Corredor</h1>
+<div class="name">Paula Corredor</div>
 
-<h3 id="title">QA Automation Engineer</h3>
+<div class="role" id="role">QA Automation Engineer</div>
 
-<div>
+</div>
 
-📧 pau.corredor95@gmail.com<br>
-🔗 linkedin.com/in/paula-corredor-q
+<div class="lang-switch">
+
+<span id="espLabel" class="lang-label active">ESP</span>
+
+<label class="switch">
+<input type="checkbox" id="langToggle" onchange="toggleLanguage()">
+<span class="slider"></span>
+</label>
+
+<span id="engLabel" class="lang-label inactive">ENG</span>
 
 </div>
 
 </div>
-
-</div>
-
-<div class="lang-btn" onclick="toggleLang()">
-ESP / ENG
-</div>
-
-</header>
 
 
 <div class="section">
 
-<h2 id="about-title">✨ Sobre mí</h2>
+<h2 id="aboutTitle">✨ Sobre mí</h2>
 
 <div class="card">
 
-<p id="about-text">
-
-Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales.
-Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.
-Disfruto investigar cómo interactúan frontend y backend, validar datos y asegurar sistemas confiables.
-
+<p id="aboutText">
+Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.
 </p>
 
 </div>
@@ -144,49 +191,45 @@ Disfruto investigar cómo interactúan frontend y backend, validar datos y asegu
 
 <div class="section">
 
-<h2 id="projects-title">🚀 Proyectos</h2>
+<h2 id="projectsTitle">🚀 Proyectos</h2>
 
 <div class="card">
 
-<h3>🚕 Urban Routes — QA Manual Tester</h3>
+<h3 id="p1title">🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
 
-<p><span class="bold">Descripción:</span><br>
-Aplicación web de planificación de rutas que calcula duración y precio de viajes.
-Permite a los usuarios seleccionar puntos de origen y destino y obtener información sobre el viaje.</p>
+<p class="bold" id="p1d">Descripción del proyecto:</p>
 
-<p><span class="bold">Problema:</span><br>
-Era necesario garantizar la calidad antes del lanzamiento para evitar errores críticos que afectaran la experiencia del usuario.</p>
+<p id="p1dt">
+Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte (automóvil personal, taxi, bicicleta, scooter, a pie, automóvil compartido).
+</p>
 
-<p><span class="bold">Lo que hice:</span></p>
+<p class="bold" id="p1p">Problema a resolver:</p>
 
-<ul>
+<p id="p1pt">
+Garantizar la calidad y funcionalidad de una aplicación crítica de transporte antes de su lanzamiento, identificando errores que podrían afectar la experiencia del usuario y la reputación de la empresa.
+</p>
 
-<li>Análisis de requisitos</li>
-<li>Diseño de más de 50 casos de prueba</li>
-<li>Ejecución de pruebas funcionales</li>
-<li>Pruebas en distintos navegadores</li>
-<li>Validación de interfaz usando Figma</li>
-<li>Reporte de bugs en Jira</li>
+<p class="bold" id="p1a">Actividades realizadas:</p>
 
-</ul>
+<ul id="p1alist">
 
-<p><span class="bold">Resultado:</span></p>
-
-<ul>
-
-<li>Más de 15 bugs reportados</li>
-<li>Mejora significativa en la estabilidad del producto</li>
+<li>Análisis de requisitos mediante mapas mentales y diagramas de flujo</li>
+<li>Diseño de casos de prueba utilizando técnicas de clases de equivalencia y valores límite</li>
+<li>Pruebas de regresión ejecutando 50+ casos de prueba predefinidos</li>
+<li>Testing cross-browser en Chrome y Firefox con diferentes resoluciones</li>
+<li>Validación de interfaz comparando diseños de Figma</li>
+<li>Pruebas de funcionalidad para rutas y reservas</li>
 
 </ul>
 
-<p class="bold">Herramientas:</p>
+<p class="bold">Herramientas utilizadas:</p>
 
 <div class="tools">
 
 <span>Jira</span>
+<span>Google Sheets</span>
 <span>Figma</span>
 <span>DevTools</span>
-<span>Google Sheets</span>
 <span>Draw.io</span>
 
 </div>
@@ -196,42 +239,23 @@ Era necesario garantizar la calidad antes del lanzamiento para evitar errores cr
 
 <div class="card">
 
-<h3>🛒 Urban Grocers — QA API Tester</h3>
+<h3 id="p2title">🛒 QA API Tester - Urban Grocers</h3>
 
-<p><span class="bold">Descripción:</span><br>
-API REST de una aplicación de ecommerce utilizada para gestionar productos, usuarios y pedidos.</p>
+<p class="bold">Descripción del proyecto:</p>
 
-<p><span class="bold">Problema:</span><br>
-Era necesario validar que todos los endpoints funcionaran correctamente y manejaran errores adecuadamente.</p>
+<p id="p2dt">
+API REST para plataforma de comercio electrónico que gestiona productos, kits, servicios de entrega y disponibilidad de almacenes.
+</p>
 
-<p><span class="bold">Lo que hice:</span></p>
-
-<ul>
-
-<li>Pruebas de endpoints GET, POST, PUT y DELETE</li>
-<li>Validación de respuestas JSON</li>
-<li>Diseño de más de 35 casos de prueba</li>
-<li>Identificación y reporte de bugs</li>
-
-</ul>
-
-<p><span class="bold">Resultado:</span></p>
-
-<ul>
-
-<li>Más de 12 bugs reportados</li>
-<li>Alta cobertura de pruebas de la API</li>
-
-</ul>
-
-<p class="bold">Herramientas:</p>
+<p class="bold">Herramientas utilizadas:</p>
 
 <div class="tools">
 
 <span>Postman</span>
+<span>Google Sheets</span>
 <span>Jira</span>
+<span>JSON Validator</span>
 <span>Swagger</span>
-<span>JSON</span>
 
 </div>
 
@@ -244,35 +268,49 @@ Era necesario validar que todos los endpoints funcionaran correctamente y maneja
 
 <script>
 
-let lang="es";
+function toggleLanguage(){
 
-function toggleLang(){
+const isEnglish = document.getElementById("langToggle").checked;
 
-if(lang==="es"){
+const esp = document.getElementById("espLabel");
+const eng = document.getElementById("engLabel");
 
-document.getElementById("about-title").innerText="✨ About Me";
-document.getElementById("projects-title").innerText="🚀 Projects";
-document.getElementById("title").innerText="QA Automation Engineer";
+if(isEnglish){
 
-document.querySelector(".lang-btn").innerText="ESP";
+esp.classList.remove("active");
+esp.classList.add("inactive");
 
-lang="en";
+eng.classList.remove("inactive");
+eng.classList.add("active");
 
-}else{
+document.getElementById("aboutTitle").innerText="✨ About Me";
 
-document.getElementById("about-title").innerText="✨ Sobre mí";
-document.getElementById("projects-title").innerText="🚀 Proyectos";
+document.getElementById("aboutText").innerText=
+"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring apps, finding bugs, analyzing root causes, and improving software quality.";
 
-document.querySelector(".lang-btn").innerText="ENG";
+document.getElementById("projectsTitle").innerText="🚀 Projects";
 
-lang="es";
+}
+else{
+
+esp.classList.add("active");
+esp.classList.remove("inactive");
+
+eng.classList.add("inactive");
+eng.classList.remove("active");
+
+document.getElementById("aboutTitle").innerText="✨ Sobre mí";
+
+document.getElementById("aboutText").innerText=
+"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software.";
+
+document.getElementById("projectsTitle").innerText="🚀 Proyectos";
 
 }
 
 }
 
 </script>
-
 
 </body>
 </html>
