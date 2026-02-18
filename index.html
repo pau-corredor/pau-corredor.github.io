@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paula Corredor | QA Automation</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f6fb;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    color: #2d6cdf;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #2d6cdf;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f4dbf;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+</style>
+
+<script>
+
+function switchLanguage(lang) {
+
+    if(lang === "en"){
+        document.getElementById("about-es").style.display = "none";
+        document.getElementById("about-en").style.display = "block";
+    }
+
+    if(lang === "es"){
+        document.getElementById("about-es").style.display = "block";
+        document.getElementById("about-en").style.display = "none";
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Paula Corredor</h1>
+<h3>QA Automation Junior | QA Tester</h3>
+
+<button onclick="switchLanguage('es')">Español</button>
+<button onclick="switchLanguage('en')">English</button>
+
+
+<div class="section">
+
+<h2>About Me</h2>
+
+<!-- ESPAÑOL -->
+<div id="about-es">
+
+<p>
+Soy QA Automation Junior y QA Tester apasionada por la calidad del software y el análisis profundo de aplicaciones. Me motiva explorar sistemas para entender cómo funcionan internamente, identificar bugs y contribuir a mejorar la experiencia del usuario.
+</p>
+
+<p>
+Disfruto investigar cómo interactúan el frontend y el backend, reproducir errores y documentarlos de forma clara. Tengo experiencia en pruebas manuales, diseño de casos de prueba y testing de APIs usando herramientas como Jira y Postman.
+</p>
+
+<p>
+Actualmente estoy enfocada en crecer como QA Automation Engineer, desarrollando soluciones que ayuden a construir software más confiable, eficiente y de alta calidad.
+</p>
+
+</div>
+
+
+<!-- ENGLISH -->
+<div id="about-en" style="display:none;">
+
+<p>
+I am a Junior QA Automation Engineer and QA Tester passionate about software quality and deep application analysis. I am driven by exploring systems to understand how they work internally, identify bugs, and contribute to improving the user experience.
+</p>
+
+<p>
+I enjoy investigating how frontend and backend interact, reproducing issues, and documenting them clearly. I have experience in manual testing, test case design, and API testing using tools such as Jira and Postman.
+</p>
+
+<p>
+I am currently focused on growing as a QA Automation Engineer, building skills that contribute to creating reliable, efficient, and high-quality software.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
