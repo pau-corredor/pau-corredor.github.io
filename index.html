@@ -73,15 +73,6 @@ h2{
 color:#81d4fa;
 }
 
-.bold{
-font-weight:bold;
-margin-top:15px;
-}
-
-ul{
-margin-top:10px;
-}
-
 .lang-switch{
 display:flex;
 align-items:center;
@@ -181,7 +172,6 @@ QA Automation Engineer
 
 <label class="switch">
 <input type="checkbox" id="langToggle">
-
 <span class="slider"></span>
 </label>
 
@@ -204,19 +194,6 @@ Soy QA Automation Junior con formación en pruebas de software y experiencia tra
 
 </div>
 
-
-<div class="section">
-
-<h2 id="projectsTitle">🚀 Proyectos</h2>
-
-
-<div class="card" id="project1"></div>
-
-<div class="card" id="project2"></div>
-
-
-</div>
-
 </div>
 
 
@@ -228,63 +205,7 @@ role:"QA Automation Engineer",
 
 aboutTitle:"✨ Sobre mí",
 
-aboutText:"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.",
-
-projectsTitle:"🚀 Proyectos",
-
-project1:`
-
-<h3>🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
-
-<div class="bold">Descripción del proyecto:</div>
-
-Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte.
-
-<div class="bold">Problema a resolver:</div>
-
-Garantizar la calidad antes del lanzamiento identificando errores críticos.
-
-<div class="bold">Actividades realizadas:</div>
-
-<ul>
-<li>Análisis de requisitos</li>
-<li>Diseño de casos de prueba</li>
-<li>Pruebas de regresión</li>
-<li>Testing cross-browser</li>
-<li>Validación con Figma</li>
-</ul>
-
-<div class="bold">Herramientas utilizadas:</div>
-
-Jira, Google Sheets, Figma, DevTools, Draw.io
-
-`,
-
-project2:`
-
-<h3>🛒 QA API Tester - Urban Grocers (Plataforma de Retail)</h3>
-
-<div class="bold">Descripción del proyecto:</div>
-
-API REST para plataforma ecommerce.
-
-<div class="bold">Problema a resolver:</div>
-
-Validar endpoints backend y calidad de datos.
-
-<div class="bold">Actividades realizadas:</div>
-
-<ul>
-<li>Testing de endpoints</li>
-<li>Validación JSON</li>
-<li>Testing GET POST PUT DELETE</li>
-</ul>
-
-<div class="bold">Herramientas utilizadas:</div>
-
-Postman, Jira, Swagger, Google Sheets
-
-`
+aboutText:"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario."
 
 };
 
@@ -295,63 +216,10 @@ role:"QA Automation Engineer",
 
 aboutTitle:"✨ About me",
 
-aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience.",
+aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience."
 
-projectsTitle:"🚀 Projects",
+};
 
-project1:`
-
-<h3>🚕 QA Manual Tester - Urban Routes (Transport Application)</h3>
-
-<div class="bold">Project description:</div>
-
-Web application for route planning and fare calculation.
-
-<div class="bold">Problem:</div>
-
-Ensure quality before launch by identifying critical issues.
-
-<div class="bold">Activities:</div>
-
-<ul>
-<li>Requirements analysis</li>
-<li>Test case design</li>
-<li>Regression testing</li>
-<li>Cross-browser testing</li>
-<li>UI validation</li>
-</ul>
-
-<div class="bold">Tools used:</div>
-
-Jira, Google Sheets, Figma, DevTools, Draw.io
-
-`,
-
-project2:`
-
-<h3>🛒 QA API Tester - Urban Grocers (Retail Platform)</h3>
-
-<div class="bold">Project description:</div>
-
-REST API for ecommerce platform.
-
-<div class="bold">Problem:</div>
-
-Validate backend endpoints and data integrity.
-
-<div class="bold">Activities:</div>
-
-<ul>
-<li>Endpoint testing</li>
-<li>JSON validation</li>
-<li>HTTP methods testing</li>
-</ul>
-
-<div class="bold">Tools used:</div>
-
-Postman, Jira, Swagger, Google Sheets
-
-`
 
 function toggleLanguage(){
 
@@ -360,19 +228,9 @@ const toggle = document.getElementById("langToggle");
 const lang = toggle.checked ? english : spanish;
 
 document.getElementById("role").innerHTML = lang.role;
-
 document.getElementById("aboutTitle").innerHTML = lang.aboutTitle;
-
 document.getElementById("aboutText").innerHTML = lang.aboutText;
 
-document.getElementById("projectsTitle").innerHTML = lang.projectsTitle;
-
-document.getElementById("project1").innerHTML = lang.project1;
-
-document.getElementById("project2").innerHTML = lang.project2;
-
-
-// control visual ESP / ENG correctamente
 
 if(toggle.checked){
 
@@ -395,10 +253,10 @@ document.getElementById("espLabel").classList.add("active");
 
 }
 
-// ESTA LÍNEA VA AQUÍ ↓↓↓
+
 document.getElementById("langToggle").addEventListener("change", toggleLanguage);
 
-// ESTA TAMBIÉN ↓↓↓
+
 document.addEventListener("DOMContentLoaded", function(){
 
 document.getElementById("langToggle").checked=false;
@@ -407,10 +265,7 @@ toggleLanguage();
 
 });
 
-
 </script>
-
 
 </body>
 </html>
-
