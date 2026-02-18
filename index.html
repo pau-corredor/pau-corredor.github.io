@@ -352,31 +352,45 @@ Postman, Jira, Swagger, Google Sheets
 
 `
 
-};
-
-
 function toggleLanguage(){
 
-const toggle=document.getElementById("langToggle");
+const toggle = document.getElementById("langToggle");
 
 const lang = toggle.checked ? english : spanish;
 
-document.getElementById("role").innerHTML=lang.role;
+document.getElementById("role").innerHTML = lang.role;
 
-document.getElementById("aboutTitle").innerHTML=lang.aboutTitle;
+document.getElementById("aboutTitle").innerHTML = lang.aboutTitle;
 
-document.getElementById("aboutText").innerHTML=lang.aboutText;
+document.getElementById("aboutText").innerHTML = lang.aboutText;
 
-document.getElementById("projectsTitle").innerHTML=lang.projectsTitle;
+document.getElementById("projectsTitle").innerHTML = lang.projectsTitle;
 
-document.getElementById("project1").innerHTML=lang.project1;
+document.getElementById("project1").innerHTML = lang.project1;
 
-document.getElementById("project2").innerHTML=lang.project2;
+document.getElementById("project2").innerHTML = lang.project2;
 
 
-document.getElementById("espLabel").classList.toggle("active");
+// control visual ESP / ENG correctamente
 
-document.getElementById("engLabel").classList.toggle("active");
+if(toggle.checked){
+
+document.getElementById("espLabel").classList.remove("active");
+document.getElementById("espLabel").classList.add("inactive");
+
+document.getElementById("engLabel").classList.remove("inactive");
+document.getElementById("engLabel").classList.add("active");
+
+}
+else{
+
+document.getElementById("engLabel").classList.remove("active");
+document.getElementById("engLabel").classList.add("inactive");
+
+document.getElementById("espLabel").classList.remove("inactive");
+document.getElementById("espLabel").classList.add("active");
+
+}
 
 }
 
