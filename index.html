@@ -1,369 +1,101 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="projects">
 
-<title>Paula Corredor | QA Automation Junior</title>
+<h2>🚀 Proyectos</h2>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-font-family: 'Inter', sans-serif;
-margin:0;
-background: linear-gradient(135deg,#f8f9ff,#eef1ff,#fdf0ff);
-color:#1a1a1a;
-}
-
-/* HEADER */
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:40px 80px;
-}
-
-.name{
-font-size:32px;
-font-weight:700;
-}
-
-.title{
-color:#6c63ff;
-font-weight:600;
-}
-
-.lang{
-cursor:pointer;
-font-weight:600;
-}
-
-/* MAIN LAYOUT */
-
-.container{
-display:grid;
-grid-template-columns: 300px 1fr;
-gap:60px;
-padding:40px 80px;
-}
-
-/* PROFILE */
-
-.profile{
-text-align:center;
-}
-
-.profile img{
-width:180px;
-height:180px;
-border-radius:50%;
-object-fit:cover;
-background:#ddd;
-}
-
-.contact{
-margin-top:20px;
-}
-
-.contact p{
-margin:10px 0;
-}
-
-/* ABOUT */
-
-.section{
-margin-bottom:50px;
-}
-
-.section h2{
-margin-bottom:15px;
-}
-
-/* TOOLS */
-
-.tools{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.tool{
-width:100px;
-height:100px;
-border-radius:15px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-font-weight:600;
-}
-
-/* TOOL COLORS */
-
-.jira{background:#2684FF;}
-.postman{background:#FF6C37;}
-.devtools{background:#F4B400;}
-.swagger{background:#7E57C2;}
-.figma{background:#2ECC71;}
-.drawio{background:#E53935;}
-.sheets{background:#34A853;}
-
-/* PROJECTS */
-
-.project{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-margin-bottom:80px;
-align-items:center;
-}
-
-.project img{
-width:100%;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-color:#777;
-}
-
-</style>
-
-</head>
-<body>
-
-<header>
-
-<div>
-<div class="name">Paula Corredor</div>
-<div class="title">QA Automation Junior</div>
-</div>
-
-<div class="lang" onclick="toggleLanguage()">ESP | ENG</div>
-
-</header>
-
-
-<div class="container">
-
-<!-- PROFILE LEFT -->
-
-<div class="profile">
-
-<img src="foto.jpg">
-
-<div class="contact">
-
-<p>📧 pau.corredor95@gmail.com</p>
-
-<p>
-🔗 <a href="https://www.linkedin.com/in/paula-corredor-q/" target="_blank">
-LinkedIn Profile
-</a>
-</p>
-
-</div>
-
-</div>
-
-
-<!-- RIGHT CONTENT -->
-
-<div>
-
-<!-- ABOUT -->
-
-<div class="section">
-
-<h2>✨ Sobre mí</h2>
-
-<p id="about">
-
-Soy QA Automation Junior con pasión por la calidad del software y el análisis profundo de aplicaciones. Me motiva explorar sistemas para entender cómo funcionan internamente, identificar bugs y contribuir a mejorar la experiencia del usuario.
-
-<br><br>
-
-Tengo experiencia en testing manual y de APIs utilizando herramientas como Jira y Postman, creando casos de prueba y documentando defectos de forma clara y accionable.
-
-<br><br>
-
-Mi objetivo es crecer como QA Automation Engineer y contribuir al desarrollo de software confiable, eficiente y de alta calidad.
-
-</p>
-
-</div>
-
-
-<!-- TOOLS -->
-
-<div class="section">
-
-<h2>🛠️ Herramientas</h2>
-
-<div class="tools">
-
-<div class="tool jira">Jira</div>
-
-<div class="tool postman">Postman</div>
-
-<div class="tool devtools">DevTools</div>
-
-<div class="tool swagger">Swagger</div>
-
-<div class="tool figma">Figma</div>
-
-<div class="tool drawio">Draw.io</div>
-
-<div class="tool sheets">Sheets</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PROJECTS -->
-
-<div style="padding:40px 80px;">
-
-<h2>💻 Proyectos</h2>
-
-
-<!-- URBAN ROUTES -->
-
-<div class="project">
-
-<div>
+<!-- Urban Routes -->
+<div class="project-card">
 
 <h3>🚕 Urban Routes — QA Manual Tester</h3>
 
-<p>
-
-Aplicación web de planificación de rutas para diferentes tipos de transporte.
-
-<br><br>
-
-✔ Diseño y ejecución de más de 50 casos de prueba  
-<br>
-✔ Identificación y reporte de 15+ defectos críticos  
-<br>
-✔ Testing cross-browser  
-<br>
-✔ Validación UI con Figma  
-<br>
-✔ Análisis usando DevTools  
-
-<br><br>
-
-Herramientas: Jira, DevTools, Figma, Google Sheets
-
+<p><b>Descripción del proyecto:</b><br>
+Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte (automóvil personal, taxi, bicicleta, scooter, a pie y automóvil compartido).
 </p>
 
+<p><b>Problema a resolver:</b><br>
+Garantizar la calidad y funcionalidad de una aplicación crítica de transporte antes de su lanzamiento, identificando errores que podrían afectar la experiencia del usuario y la reputación de la empresa.
+</p>
+
+<p><b>Actividades realizadas:</b></p>
+
+<ul>
+<li>Análisis de requisitos mediante mapas mentales y diagramas de flujo</li>
+<li>Diseño de casos de prueba utilizando clases de equivalencia y valores límite</li>
+<li>Ejecución de 50+ casos de prueba de regresión</li>
+<li>Testing cross-browser en Chrome y Firefox</li>
+<li>Validación de interfaz usando Figma</li>
+<li>Pruebas funcionales de cálculo de precios, rutas y reservas</li>
+</ul>
+
+<p><b>Resultados obtenidos:</b></p>
+
+<ul>
+<li>Reporte de 15+ defectos críticos</li>
+<li>Cobertura completa de funcionalidades clave</li>
+<li>Documentación detallada para futuras regresiones</li>
+</ul>
+
+<p><b>Herramientas utilizadas:</b></p>
+
+<div class="tools">
+<span class="tool jira">Jira</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool figma">Figma</span>
+<span class="tool devtools">DevTools</span>
+<span class="tool drawio">Draw.io</span>
 </div>
 
-<div>
-
-<img src="urban-routes.png">
-
+<div class="screenshots">
+📸 Espacio para screenshots
 </div>
 
 </div>
 
 
-<!-- URBAN GROCERS -->
-
-<div class="project">
-
-<div>
-
-<img src="urban-grocers.png">
-
-</div>
-
-<div>
+<!-- Urban Grocers -->
+<div class="project-card">
 
 <h3>🛒 Urban Grocers — QA API Tester</h3>
 
-<p>
-
-API REST para plataforma de comercio electrónico.
-
-<br><br>
-
-✔ Diseño de 35+ casos de prueba  
-<br>
-✔ Testing de endpoints GET, POST, PUT, DELETE  
-<br>
-✔ Identificación de 12+ defectos críticos  
-<br>
-✔ Validación de respuestas JSON  
-
-<br><br>
-
-Herramientas: Postman, Jira, Swagger, Google Sheets
-
+<p><b>Descripción del proyecto:</b><br>
+API REST para plataforma de comercio electrónico que gestiona productos, kits, servicios de entrega y disponibilidad de almacenes.
 </p>
 
+<p><b>Problema a resolver:</b><br>
+Validar la correcta implementación de funcionalidades backend y asegurar la calidad de los endpoints.
+</p>
+
+<p><b>Actividades realizadas:</b></p>
+
+<ul>
+<li>Diseño de 35+ casos de prueba</li>
+<li>Testing de métodos GET, POST, PUT, DELETE</li>
+<li>Validación de JSON y códigos de respuesta</li>
+<li>Pruebas positivas, negativas y edge cases</li>
+<li>Testing de lógica de negocio</li>
+</ul>
+
+<p><b>Resultados obtenidos:</b></p>
+
+<ul>
+<li>Reporte de 12+ defectos críticos</li>
+<li>Cobertura del 95% de endpoints críticos</li>
+<li>Mejora de calidad antes del despliegue</li>
+</ul>
+
+<p><b>Herramientas utilizadas:</b></p>
+
+<div class="tools">
+<span class="tool postman">Postman</span>
+<span class="tool jira">Jira</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool swagger">Swagger</span>
+<span class="tool json">JSON</span>
+</div>
+
+<div class="screenshots">
+📸 Espacio para screenshots
 </div>
 
 </div>
 
-</div>
-
-
-<footer>
-
-© 2026 Paula Corredor — QA Automation Junior
-
-</footer>
-
-
-<script>
-
-let currentLang = "es";
-
-function toggleLanguage(){
-
-if(currentLang==="es"){
-
-document.getElementById("about").innerHTML = `
-I am a QA Automation Junior passionate about software quality and application analysis. I enjoy exploring systems, identifying bugs, and improving user experience.
-
-<br><br>
-
-I have experience in manual and API testing using tools like Jira and Postman.
-
-<br><br>
-
-My goal is to grow as a QA Automation Engineer and contribute to building reliable, high-quality software.
-`;
-
-currentLang="en";
-
-}
-
-else{
-
-location.reload();
-
-}
-
-}
-
-</script>
-
-</body>
-</html>
-<!-- update -->
+</section>
