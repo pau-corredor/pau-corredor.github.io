@@ -354,9 +354,104 @@ aboutTitle:"✨ About me",
 
 aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience.",
 
-projectsTitle:"🚀 Projects"
+project1:`
+
+<h3>🚕 QA Manual Tester - Urban Routes (Transport Application)</h3>
+
+<div class="project-image"></div>
+
+<p><strong>Project description:</strong><br>
+Web route planning application that calculates duration and price of trips for different types of transport (car, taxi, bicycle, scooter, walking, car sharing).</p>
+
+<p><strong>Problem to solve:</strong><br>
+Ensure the quality and functionality of a critical transport application before launch, identifying defects that could affect user experience and company reputation.</p>
+
+<p><strong>Activities performed:</strong></p>
+
+<ul>
+<li>Requirements analysis using mind maps and flow diagrams</li>
+<li>Test case design using equivalence classes and boundary values</li>
+<li>Regression testing executing 50+ test cases</li>
+<li>Cross-browser testing in Chrome and Firefox</li>
+<li>UI validation comparing Figma designs with implementation</li>
+<li>Functional testing for routes, pricing, and reservations</li>
+</ul>
+
+<p><strong>Results achieved:</strong></p>
+
+<ul>
+<li>Identified and reported 15+ critical defects</li>
+<li>Full coverage of taxi and car sharing features</li>
+<li>Complete documentation of test cases and checklists</li>
+</ul>
+
+<p><strong>Tools used:</strong><br>
+
+<span class="tool jira">Jira</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool figma">Figma</span>
+<span class="tool devtools">DevTools</span>
+<span class="tool drawio">Draw.io</span>
+
+</p>
+
+`,
+
+project2:`
+
+<h3>🛒 QA API Tester - Urban Grocers (Retail Platform)</h3>
+
+<div class="project-image"></div>
+
+<p><strong>Project description:</strong><br>
+REST API for an e-commerce platform managing products, kits, delivery services, and warehouse availability.</p>
+
+<p><strong>Problem to solve:</strong><br>
+Validate backend implementation of product kits and delivery services, ensuring business requirements are correctly supported.</p>
+
+<p><strong>Activities performed:</strong></p>
+
+<ul>
+<li>API documentation analysis</li>
+<li>Designed 35+ test cases</li>
+<li>HTTP testing: GET, POST, PUT, DELETE</li>
+<li>Positive and negative testing</li>
+<li>JSON validation</li>
+<li>Warehouse availability testing</li>
+</ul>
+
+<p><strong>Results achieved:</strong></p>
+
+<ul>
+<li>Identified 12+ critical defects</li>
+<li>Full validation of kit functionality</li>
+<li>95% coverage of critical endpoints</li>
+<li>Improved backend quality before release</li>
+</ul>
+
+<p><strong>Key learnings:</strong></p>
+
+<ul>
+<li>REST API testing</li>
+<li>JSON validation</li>
+<li>HTTP status codes expertise</li>
+<li>Basic automation with Postman</li>
+</ul>
+
+<p><strong>Tools used:</strong><br>
+
+<span class="tool postman">Postman</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool jira">Jira</span>
+<span class="tool json">JSON Validator</span>
+<span class="tool swagger">Swagger/OpenAPI</span>
+
+</p>
+
+`
 
 };
+
 
 
 function toggleLanguage(){
@@ -368,6 +463,12 @@ const lang = toggle.checked ? english : spanish;
 document.getElementById("role").innerHTML = lang.role;
 document.getElementById("aboutTitle").innerHTML = lang.aboutTitle;
 document.getElementById("aboutText").innerHTML = lang.aboutText;
+
+if(lang.project1){
+document.getElementById("project1").innerHTML = lang.project1;
+document.getElementById("project2").innerHTML = lang.project2;
+}
+
 document.getElementById("projectsTitle").innerHTML = lang.projectsTitle;
 
 
@@ -414,7 +515,8 @@ toggleLanguage();
 
 
   <!-- PROYECTO 1 -->
-  <div class="project" id="project1">
+<div class="project" id="project1">
+
 
     <h3>🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
 
