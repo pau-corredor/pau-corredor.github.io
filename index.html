@@ -322,7 +322,49 @@ role:"QA Automation Engineer",
 
 aboutTitle:"✨ Sobre mí",
 
-aboutText:"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario."
+aboutText:"Soy QA Automation Junior con formación en pruebas de software y experiencia trabajando con aplicaciones reales. Me apasiona explorar aplicaciones, identificar bugs, analizar su origen y contribuir a mejorar la calidad del software y la experiencia del usuario.",
+
+projectsTitle:"🚀 Proyectos",
+
+project1: `
+<h3>🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
+
+<p><strong>Descripción del proyecto:</strong><br>
+Aplicación web de planificación de rutas que calcula duración y precio de viajes para diferentes tipos de transporte (automóvil personal, taxi, bicicleta, scooter, a pie, automóvil compartido).</p>
+
+<p><strong>Problema a resolver:</strong><br>
+Garantizar la calidad y funcionalidad de una aplicación crítica de transporte antes de su lanzamiento, identificando errores que podrían afectar la experiencia del usuario y la reputación de la empresa.</p>
+
+<p><strong>Herramientas utilizadas:</strong><br>
+
+<span class="tool jira">Jira</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool figma">Figma</span>
+<span class="tool devtools">DevTools</span>
+<span class="tool drawio">Draw.io</span>
+
+</p>
+`,
+
+project2: `
+<h3>🛒 QA API Tester - Urban Grocers (Plataforma de Retail)</h3>
+
+<p><strong>Descripción del proyecto:</strong><br>
+API REST para plataforma de comercio electrónico que gestiona productos, kits, servicios de entrega y disponibilidad de almacenes.</p>
+
+<p><strong>Problema a resolver:</strong><br>
+Validar la correcta implementación de funcionalidades backend para gestión de kits de productos y servicios de entrega.</p>
+
+<p><strong>Herramientas utilizadas:</strong><br>
+
+<span class="tool postman">Postman</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool jira">Jira</span>
+<span class="tool json">JSON Validator</span>
+<span class="tool swagger">Swagger/OpenAPI</span>
+
+</p>
+`
 
 };
 
@@ -333,9 +375,52 @@ role:"QA Automation Engineer",
 
 aboutTitle:"✨ About me",
 
-aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience."
+aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience.",
+
+projectsTitle:"🚀 Projects",
+
+project1: `
+<h3>🚕 QA Manual Tester - Urban Routes (Transport Application)</h3>
+
+<p><strong>Project description:</strong><br>
+Web application for route planning and fare calculation for multiple transport types.</p>
+
+<p><strong>Problem to solve:</strong><br>
+Ensure quality and functionality before release by identifying critical defects affecting user experience.</p>
+
+<p><strong>Tools used:</strong><br>
+
+<span class="tool jira">Jira</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool figma">Figma</span>
+<span class="tool devtools">DevTools</span>
+<span class="tool drawio">Draw.io</span>
+
+</p>
+`,
+
+project2: `
+<h3>🛒 QA API Tester - Urban Grocers (Retail Platform)</h3>
+
+<p><strong>Project description:</strong><br>
+REST API for ecommerce platform managing products, kits, delivery services and warehouses.</p>
+
+<p><strong>Problem to solve:</strong><br>
+Validate backend functionality and ensure data integrity and correct business logic.</p>
+
+<p><strong>Tools used:</strong><br>
+
+<span class="tool postman">Postman</span>
+<span class="tool sheets">Google Sheets</span>
+<span class="tool jira">Jira</span>
+<span class="tool json">JSON Validator</span>
+<span class="tool swagger">Swagger/OpenAPI</span>
+
+</p>
+`
 
 };
+
 
 
 function toggleLanguage(){
@@ -348,27 +433,32 @@ document.getElementById("role").innerHTML = lang.role;
 document.getElementById("aboutTitle").innerHTML = lang.aboutTitle;
 document.getElementById("aboutText").innerHTML = lang.aboutText;
 
+document.getElementById("projectsTitle").innerHTML = lang.projectsTitle;
+document.getElementById("project1").innerHTML = lang.project1;
+document.getElementById("project2").innerHTML = lang.project2;
+
 
 if(toggle.checked){
 
-document.getElementById("espLabel").classList.remove("active");
-document.getElementById("espLabel").classList.add("inactive");
+espLabel.classList.remove("active");
+espLabel.classList.add("inactive");
 
-document.getElementById("engLabel").classList.remove("inactive");
-document.getElementById("engLabel").classList.add("active");
+engLabel.classList.remove("inactive");
+engLabel.classList.add("active");
 
 }
 else{
 
-document.getElementById("engLabel").classList.remove("active");
-document.getElementById("engLabel").classList.add("inactive");
+engLabel.classList.remove("active");
+engLabel.classList.add("inactive");
 
-document.getElementById("espLabel").classList.remove("inactive");
-document.getElementById("espLabel").classList.add("active");
+espLabel.classList.remove("inactive");
+espLabel.classList.add("active");
+
+}
 
 }
 
-}
 
 
 document.getElementById("langToggle").addEventListener("change", toggleLanguage);
@@ -386,10 +476,11 @@ toggleLanguage();
 
 <!-- PROYECTOS -->
 <section id="projects">
-  <h2>🚀 Proyectos</h2>
+  <h2 id="projectsTitle">🚀 Proyectos</h2>
+
 
   <!-- PROYECTO 1 -->
-  <div class="project">
+  <div class="project" id="project1">
 
     <h3>🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
 
@@ -440,7 +531,7 @@ toggleLanguage();
 </div>
 
 <!-- PROYECTO 2 -->
-  <div class="project">
+  <div class="project" id="project2">
 
     <h3>🛒 QA API Tester - Urban Grocers (Plataforma de Retail)</h3>
 
