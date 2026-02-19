@@ -270,29 +270,33 @@ margin-top:18px;
 color:#81d4fa;
 }
 
-  /* CONTENEDOR DE IMÁGENES DEL PROYECTO */
+ /* GALERÍA DE PROYECTOS */
 .project-image{
 margin-top:15px;
 margin-bottom:20px;
 display:flex;
-flex-direction:column;
+flex-wrap:wrap;
 gap:12px;
-align-items:center;
+justify-content:center;
 }
 
-/* ESTILO DE CADA IMAGEN */
+/* MINIATURAS */
 .project-image img{
-width:100%;
-max-width:700px;
-border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.4);
+width:180px;
+height:110px;
+object-fit:cover;
+border-radius:8px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-/* EFECTO HOVER PROFESIONAL */
+/* HOVER EFECTO */
 .project-image img:hover{
-transform:scale(1.02);
+transform:scale(1.08);
+box-shadow:0 6px 16px rgba(0,0,0,0.6);
 }
+
 
 </style>
 
@@ -761,6 +765,51 @@ toggleLanguage();
   </div>
 
 </section>
+
+<!-- MODAL PARA AMPLIAR IMAGEN -->
+<div id="imageModal" style="
+display:none;
+position:fixed;
+z-index:999;
+padding-top:60px;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background-color:rgba(0,0,0,0.9);
+text-align:center;
+">
+
+<img id="modalImg" style="
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+">
+
+</div>
+
+<script>
+
+document.querySelectorAll('.project-image img').forEach(img => {
+
+img.onclick = function(){
+
+document.getElementById("imageModal").style.display = "block";
+
+document.getElementById("modalImg").src = this.src;
+
+}
+
+});
+
+document.getElementById("imageModal").onclick = function(){
+
+this.style.display = "none";
+
+}
+
+</script>
+
 
 </body>
 </html>
