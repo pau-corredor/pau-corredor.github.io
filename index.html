@@ -412,6 +412,48 @@ aboutText:"Soy QA Automation Junior con formación en pruebas de software y expe
 
 projectsTitle:"🚀 Proyectos",
 
+project3:`
+<h3>🚕 QA Automation UI - Urban Routes (Proceso de Reserva de Taxi)</h3>
+
+<div class="project-image">
+  <img src="sprint 9.png" alt="Urban Routes Automation">
+  <img src="sprint 9.1.png" alt="Page Object Model Structure">
+  <img src="sprint 9.2.png" alt="Selenium Test Execution">
+  <img src="sprint 9.3.png" alt="GitHub Repository & README">
+</div>
+
+<p><strong>Descripción del proyecto:</strong><br>
+Desarrollo e implementación de un framework de automatización de pruebas UI en Python con Selenium WebDriver para la aplicación web "Urban Routes", cubriendo de principio a fin el flujo completo de usuario para la reserva y solicitud de un servicio de taxi (tarifa Comfort).</p>
+
+<p><strong>Problema a resolver:</strong><br>
+Automatizar la validación del flujo crítico de la aplicación (configuración de ruta, ingreso de datos de contacto, métodos de pago, requerimientos adicionales y asignación de conductor) para garantizar que las funciones principales operen sin errores y acelerar los ciclos de pruebas de regresión.</p>
+
+<p><strong>Actividades realizadas:</strong></p>
+<ul>
+  <li>Estructuración del código bajo la arquitectura <strong>Page Object Model (POM)</strong> dividiendo localizadores/métodos (<code>UrbanRoutesPage</code>) y ejecuciones de prueba (<code>TestUrbanRoutes</code>).</li>
+  <li>Identificación de elementos web mediante XPath y CSS Selectors en PyCharm, implementando esperas explícitas (<em>Explicit Waits</em>) para lidiar con modales y elementos dinámicos.</li>
+  <li>Automatización completa de 9 pasos end-to-end: selección de ruta, tarifa Comfort, ingreso de teléfono, interceptación de código de confirmación, tarjeta de crédito (gestión de pérdida de enfoque en CVV), mensaje al conductor, adición de manta, pañuelos y helados.</li>
+  <li>Validación del modal de búsqueda de taxi y comprobación de asignación de conductor tras la cuenta regresiva.</li>
+  <li>Documentación técnica del proyecto mediante un archivo <code>README.md</code> con instrucciones detalladas para la instalación de dependencias y ejecución de las pruebas.</li>
+</ul>
+
+<p><strong>Resultados obtenidos:</strong></p>
+<ul>
+  <li>Automatización exitosa del 100% del flujo crítico de reserva de taxi.</li>
+  <li>Creación de un suite de pruebas modular, mantenible y reutilizable gracias al patrón Page Object Model.</li>
+  <li>Eliminación total del esfuerzo manual repetitivo en pruebas de regresión de reservas.</li>
+</ul>
+
+<p><strong>Herramientas utilizadas:</strong><br>
+<span class="tool python">Python</span>
+<span class="tool selenium">Selenium WebDriver</span>
+<span class="tool pycharm">PyCharm</span>
+<span class="tool devtools">Page Object Model</span>
+<span class="tool git">Git / GitHub</span>
+<span class="tool markdown">Markdown</span>
+</p>
+`,
+
 project1:`
 
 <h3>🚕 QA Manual Tester - Urban Routes (Aplicación de Transporte)</h3>
@@ -543,6 +585,48 @@ aboutTitle:"✨ About me",
 aboutText:"I am a QA Automation Junior with training in software testing and experience working with real applications. I enjoy exploring systems, identifying bugs, analyzing root causes, and improving software quality and user experience.",
 
 projectsTitle:"🚀 Projects",
+
+project3:`
+<h3>🚕 QA Automation UI - Urban Routes (Taxi Booking Process)</h3>
+
+<div class="project-image">
+  <img src="sprint9-1.png" alt="Urban Routes Automation">
+  <img src="sprint9-2.png" alt="Page Object Model Structure">
+  <img src="sprint9-3.png" alt="Selenium Test Execution">
+  <img src="sprint9-4.png" alt="GitHub Repository & README">
+</div>
+
+<p><strong>Project description:</strong><br>
+Development and implementation of a UI test automation framework in Python using Selenium WebDriver for the "Urban Routes" web application, covering the complete end-to-end user flow for booking a taxi (Comfort rate).</p>
+
+<p><strong>Problem to solve:</strong><br>
+Automate the validation of the application's critical user flow (route setup, contact details, payment methods, additional requirements, and driver assignment) to ensure core features work flawlessly and speed up regression test cycles.</p>
+
+<p><strong>Activities performed:</strong></p>
+<ul>
+  <li>Structured test code using the <strong>Page Object Model (POM)</strong> architecture, separating locators/methods (<code>UrbanRoutesPage</code>) from test assertions (<code>TestUrbanRoutes</code>).</li>
+  <li>Identified web elements using XPath and CSS Selectors in PyCharm, implementing Explicit Waits to handle dynamic modals and countdown timers.</li>
+  <li>Automated complete 9-step end-to-end flow: route selection, Comfort fare, phone number entry, SMS code interception, credit card binding (handling CVV focus loss), driver note, adding blanket, tissues, and ice cream.</li>
+  <li>Validated the taxi search modal and confirmed driver assignment details upon timer completion.</li>
+  <li>Created technical documentation via a comprehensive <code>README.md</code> file detailing environment setup, dependencies, and execution commands.</li>
+</ul>
+
+<p><strong>Results achieved:</strong></p>
+<ul>
+  <li>Successfully automated 100% of the critical taxi booking workflow.</li>
+  <li>Built a clean, modular, and maintainable test suite using Page Object Model design.</li>
+  <li>Eliminated manual overhead for regression testing on the core reservation journey.</li>
+</ul>
+
+<p><strong>Tools used:</strong><br>
+<span class="tool python">Python</span>
+<span class="tool selenium">Selenium WebDriver</span>
+<span class="tool pycharm">PyCharm</span>
+<span class="tool devtools">Page Object Model</span>
+<span class="tool git">Git / GitHub</span>
+<span class="tool markdown">Markdown</span>
+</p>
+`,
 
 project1:`
 
@@ -677,6 +761,7 @@ document.getElementById("aboutText").innerHTML = lang.aboutText;
 if(lang.project1){
 document.getElementById("project1").innerHTML = lang.project1;
 document.getElementById("project2").innerHTML = lang.project2;
+document.getElementById("project3").innerHTML = lang.project3;
 }
 
 document.getElementById("projectsTitle").innerHTML = lang.projectsTitle;
@@ -723,7 +808,10 @@ toggleLanguage();
 <section id="projects">
   <h2 id="projectsTitle">🚀 Proyectos</h2>
 
+<!-- PROYECTO 3: SPRINT 9 AUTOMATIZACIÓN -->
+<div class="project" id="project3"></div>
 
+  
   <!-- PROYECTO 1 -->
 <div class="project" id="project1">
 
