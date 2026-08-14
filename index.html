@@ -927,12 +927,11 @@ toggleLanguage();
 
 </section>
 
-<!-- MODAL PARA AMPLIAR IMAGEN -->
+<!-- MODAL PARA AMPLIAR IMÁGENES Y NAVEGAR CON FLECHAS -->
 <div id="imageModal" style="
 display:none;
 position:fixed;
-z-index:999;
-padding-top:60px;
+z-index:9999;
 left:0;
 top:0;
 width:100%;
@@ -940,37 +939,169 @@ height:100%;
 background-color:rgba(0,0,0,0.9);
 text-align:center;
 ">
+  <!-- Botón cerrar (X) -->
+  <span id="closeModal" style="
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+    cursor:pointer;
+  ">&times;</span>
 
-<img id="modalImg" style="
-max-width:90%;
-max-height:80%;
-border-radius:10px;
-">
+  <!-- Flecha Izquierda -->
+  <button id="prevBtn" style="
+    position:absolute;
+    top:50%;
+    left:20px;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,0.2);
+    color:white;
+    border:none;
+    font-size:30px;
+    padding:10px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.3s;
+  ">&#10094;</button>
 
+  <!-- Imagen ampliada grande -->
+  <img id="modalImg" style="
+    max-width:90%;
+    max-height:85vh;
+    margin-top:40px;
+    border-radius:10px;
+    box-shadow:0 0 25px rgba(0,0,0,0.8);
+    object-fit:contain;
+  ">
+
+  <!-- Flecha Derecha -->
+  <button id="nextBtn" style="
+    position:absolute;
+    top:50%;
+    right:20px;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,0.2);
+    color:white;
+    border:none;
+    font-size:30px;
+    padding:10px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.3s;
+  ">&#10095;</button>
 </div>
 
 <script>
 
-document.querySelectorAll('.project-image img').forEach(img => {
+/* 1. Lógica para cambiar de idioma (ESP / ENG) */
+function toggleLanguage(){
+  const toggle = document.getElementById("langToggle");
+  const lang = toggle.checked ? english : spanish;
 
-img.onclick = function(){
+  document.getElementById("role").innerHTML = lang.role;
+  document.getElementById("aboutTitle").innerHTML = lang.aboutTitle;
+  document.getElementById("aboutText").innerHTML = lang.aboutText;
 
-document.getElementById("imageModal").style.display = "block";
+  document.getElementById("project1").innerHTML = lang.project1;
+  document.getElementById("project2").innerHTML = lang.project2;
+  if(document.getElementById("project3")) document.getElementById("project3").innerHTML = lang.project3;
+  if(document.getElementById("project4")) document.getElementById("project4").innerHTML = lang.project4;
 
-document.getElementById("modalImg").src = this.src;
+  document.getElementById("projectsTitle").innerHTML = lang.projectsTitle;
 
+  // Re-vincular el clic de las fotos después de cambiar de idioma
+  bindModalEvents();
+
+  const espLabel = document.getElementById("espLabel");
+  const engLabel = document.getElementById("engLabel");
+
+  if(toggle.checked){
+    espLabel.classList.remove("active");
+    espLabel.classList.add("inactive");
+    engLabel.classList.remove("inactive");
+    engLabel.classList.add("active");
+  } else {
+    engLabel.classList.remove("active");
+    engLabel.classList.add("inactive");
+    espLabel.classList.remove("inactive");
+    espLabel.classList.add("active");
+  }
 }
 
+/* 2. Lógica para ampliar fotos y usar flechas */
+let currentGalleryImages = [];
+let currentImageIndex = 0;
+
+function bindModalEvents(){
+  document.querySelectorAll('.project').forEach(project => {
+    const images = Array.from(project.querySelectorAll('.project-image img'));
+    
+    images.forEach((img, index) => {
+      img.onclick = function(){
+        currentGalleryImages = images.map(i => i.src);
+        currentImageIndex = index;
+        openModal();
+      }
+    });
+  });
+}
+
+function openModal(){
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  modal.style.display = "block";
+  modalImg.src = currentGalleryImages[currentImageIndex];
+}
+
+function showNextImage(e){
+  if(e) e.stopPropagation();
+  if(currentGalleryImages.length === 0) return;
+  currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+  document.getElementById("modalImg").src = currentGalleryImages[currentImageIndex];
+}
+
+function showPrevImage(e){
+  if(e) e.stopPropagation();
+  if(currentGalleryImages.length === 0) return;
+  currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+  document.getElementById("modalImg").src = currentGalleryImages[currentImageIndex];
+}
+
+// Botones del modal
+document.getElementById("nextBtn").onclick = showNextImage;
+document.getElementById("prevBtn").onclick = showPrevImage;
+
+document.getElementById("closeModal").onclick = function(){
+  document.getElementById("imageModal").style.display = "none";
+};
+
+document.getElementById("imageModal").onclick = function(e){
+  if(e.target.id === "imageModal"){
+    this.style.display = "none";
+  }
+};
+
+// Teclado (Flechas e Izquierda/Derecha/Esc)
+document.addEventListener("keydown", function(e){
+  const modal = document.getElementById("imageModal");
+  if(modal.style.display === "block"){
+    if(e.key === "ArrowRight") showNextImage();
+    if(e.key === "ArrowLeft") showPrevImage();
+    if(e.key === "Escape") modal.style.display = "none";
+  }
 });
 
-document.getElementById("imageModal").onclick = function(){
+/* 3. Iniciar eventos al cargar la página */
+document.getElementById("langToggle").addEventListener("change", toggleLanguage);
 
-this.style.display = "none";
-
-}
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("langToggle").checked = false;
+  toggleLanguage();
+});
 
 </script>
-
 
 </body>
 </html>
